@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="login">
+        <div class="container login__container">
+            <h1 class="login__tittle">Login oynasi</h1>
+            <form id="loginform">
+                <input type="text"
+                id="usernameinput"
+                placeholder="Ismingizni kiriting"
+                required> <br>
+                <input type="text"
+                id="password"
+                placeholder="Parol kiriting"
+                required> <br>
+                <button type="submit" id="loginbtn">KIRISH</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const loginform = document.querySelector("#loginform");
+        const usernameinput = document.querySelector("#usernameinput");
+        const password = document.querySelector("#password")
+        const loginbtn = document.querySelector("#loginbtn");
+
+        loginform.addEventListener("submit" , function(e){
+            e.preventDefault();
+            if(localStorage.getItem("username") == usernameinput.value && localStorage.getItem("password") == password.value){
+                alert("Saytga xush kelibsiz")
+                window.location.href = "qogoz.html"
+            }
+            else{
+                alert("Parolingiz xato")
+            }
+        })
+    </script>
+    
+</body>
+</html>

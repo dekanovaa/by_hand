@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Registratsiya</title>
+</head>
+<body>
+    <div class="registr">
+        <div class="container registr__container">
+            <h1 class="registr__tittle">Ro'yxatdan o'tish oynasi</h1>
+            <form id="registrform">
+                <input type="text"
+                id="usernameinput"
+                placeholder="Ismingizni kiriting"
+                required> <br>
+                <input type="email"
+                id="emailinput"
+                placeholder="Emailingizni kiriting"
+                required> <br>
+                <input type="text"
+                id="password"
+                placeholder="Parol kiriting"
+                required> <br>
+                <button type="submit" id="registrbtn">Ro'yxatdan o'tish</button><br>
+                <a href="login.html">Ro'yxatdan o'tganmisiz ?</a>
+            </form>
+        </div>
+    </div>
+
+
+
+    <script>
+        const registrform = document.querySelector("#registrform");
+        const usernameinput = document.querySelector("#usernameinput");
+        const emailinput = document.querySelector("#emailinput");
+        const registrbtn = document.querySelector("#registrbtn");
+        const password = document.querySelector("#password");
+
+        registrform.addEventListener("submit" , function(event){
+            event.preventDefault();
+            if(localStorage.getItem("username") !== usernameinput.value && localStorage.getItem("email") !== emailinput.value && localStorage.getItem("password") !== password.value){
+                localStorage.setItem("username" , usernameinput.value);
+                localStorage.setItem("email" , emailinput.value);
+                localStorage.setItem("password" , password.value)
+                alert("Tabriklaymiz! Ro'yxatdan muvaffaqiyatli o'tdingiz")
+                window.location.href = "qogoz.html"
+            }
+            else{
+                alert("Bunday foydalanuvchi mavjud")
+            }
+        })
+    </script>
+    
+</body>
+</html>
