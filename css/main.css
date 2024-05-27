@@ -456,6 +456,7 @@
 
 .content{
   padding-top: 30px;
+  padding-bottom: 30px;
 }
 .content__list{
   list-style: none;
